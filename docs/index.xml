@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on KubePlatform</title>
+    <link>/docs/</link>
+    <description>Recent content in Docs on KubePlatform</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Components</title>
+      <link>/docs/components/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/components/</guid>
+      <description>Ingress Controller The nginx-ingress controller is used for routing incoming traffic. By using ingresses for exposing services to external traffic, only one load balancer is provisioned per ingress controller. This approach does save not only costs billed by the infrastructure provider but also provides more fine-grained control over routing. For more details on the nginx-ingress controller configuration, see the documentation. 
+Logging EFK Stack
+
+Monitoring, Alerting Prometheus mit node-exporter, Grafana, Alert Manager, kube-state-metrics etc.</description>
+    </item>
+    
+    <item>
+      <title>Getting started</title>
+      <link>/docs/tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/tutorial/</guid>
+      <description>Precondition  Installed kustomize 2.0.1 Running GKE Kubernetes Cluster with at least 3 instances of n1-standard-2 worker nodes.  Configuration What you need to know now:
+ An email address for issuing tls certificates A DNS zone name (e.g. kubeplatform.my.domain.io) A GCP project ID (e.g. my-google-project-223304)  Own Oauth provider KubePlatform comes with pre-configured Keycloak used for user management and oauth2 authentication. If you plan to use your own OAuth provider, collect these parameters:</description>
+    </item>
+    
+  </channel>
+</rss>

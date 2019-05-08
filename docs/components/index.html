@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.55.0" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Components </title>
+
+  
+  <meta name="description" content="Provided infrastructure for your cluster."> 
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="KubePlatform">
+
+
+  <meta property="og:title" content="Components" />
+<meta property="og:description" content="Provided infrastructure for your cluster." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/components/" />
+
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="/docs/components/">  
+
+  <link rel="shortcut icon" type="image/png" href="data:image/png;base64,xxx">
+
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.demo.css" rel="stylesheet" type="text/css">
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">KubePlatform</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">KubePlatform</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog/" >Blog</a></li>
+    
+    <li><a href="/docs/" >Docs</a></li>
+    
+    <li><a href="/faq/" >FAQ</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+  <div id="main">
+    <div id="hero">
+      <h1> Components </h1>
+      <p class="hero-lead">
+           The following components are installed when leveraging KubePlatform.
+      </p>
+
+    </div> 
+    <div id="kube-component" class="content">
+    
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+
+tocSelector: '.js-toc',
+
+contentSelector: '.content',
+
+headingSelector: 'h3'
+})
+}
+);
+</script>
+
+
+
+    <p><h3 class="section-head" id="ingress-controller"><a href="#ingress-controller">Ingress Controller</a></h3>
+<div class="example">
+  The <mark>nginx-ingress</mark> controller is used for routing incoming traffic. By using ingresses for exposing services to external traffic, only one load balancer is provisioned per ingress controller. This approach does save not only costs billed by the infrastructure provider but also provides more fine-grained control over routing. For more details on the nginx-ingress controller configuration, see the <a href="https://github.com/bitnami/charts/tree/master/bitnami/nginx-ingress-controller/#configuration">documentation</a>.
+</div></p>
+
+<p><h3 class="section-head" id="logging"><a href="#logging">Logging</a></h3>
+<div class="example">
+  <p><mark>EFK Stack</mark></p>
+</div></p>
+
+<p><h3 class="section-head" id="monitoring"><a href="#monitoring">Monitoring, Alerting</a></h3>
+<div class="example">
+  <p><mark>Prometheus mit node-exporter, Grafana, Alert Manager, kube-state-metrics etc.</mark></p>
+</div></p>
+
+<p><h3 class="section-head" id="tls"><a href="#tls">TLS Certificate Management</a></h3>
+<div class="example">
+  The <mark>cert-manager</mark> is installed for automatically issuing tls certificates via <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>. Annotations to the service&rsquo;s ingress, indicates the need for a tls certificate to be fetched by the cert-manager. For more information about the cert-manager, reference to the <a href="http://docs.cert-manager.io">documentation</a>.</p>
+
+<p><pre>
+    <span class="hljs-comment"># ingress.yaml</span>
+    annotations:
+      certmanager.k8s.io/issuer: &ldquo;letsencrypt-prod&rdquo;
+      certmanager.k8s.io/acme-challenge-type: http01
+  </pre>
+</div></p>
+
+<p><h3 class="section-head" id="auth"><a href="#auth">Oauth-based Authentication</a></h3>
+<div class="example">
+  <p><mark>oauth2-proxy</mark></p>
+</div></p>
+
+<p><h3 class="section-head" id="dns"><a href="#dns">DNS Management</a></h3>
+<div class="example">
+  <p><mark>External DNS</mark></p>Configuring public DNS servers
+</div></p>
+
+<p><h3 class="section-head" id="iam"><a href="#iam">Identity Management</a></h3>
+<div class="example">
+  <p><mark>keycloak</mark></p>
+</div></p>
+
+<p><h3 class="section-head" id="ci-cd"><a href="#ci-cd">CI/CD Tooling</a></h3>
+<div class="example">
+  <p><mark>argo Workflow, argo-events</mark></p>
+</div></p>
+
+
+    
+    </div>
+    </div>
+</main>
+  <footer></footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/master.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
