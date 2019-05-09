@@ -98,7 +98,7 @@
            Learn how to utilize Kubeplatform for your production-ready cluster on <mark>GKE</mark>.
       </p>
 
-    </div> 
+    </div>
     <div id="kube-component" class="content">
     
 <nav id="contents">
@@ -128,8 +128,6 @@ headingSelector: 'h3'
 <li>Installed <a href="https://github.com/kubernetes-sigs/kustomize/releases">kustomize 2.0.1</a></li>
 <li>Running GKE Kubernetes Cluster with at least 3 instances of <code>n1-standard-2</code> worker nodes.</li>
 </ul>
-
-<hr />
 
 <h4 class="section-head" id="2"><a href="#2">Configuration</a></h4>
 
@@ -193,7 +191,7 @@ gcloud iam service-accounts keys create ./google-credentials.json \
   --project $PROJECT_ID
 
 gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member serviceAccount:${DOMAIN//./-}@$PROJECT_ID.iam.gserviceaccount.com --role roles/dns.admin 
+    --member serviceAccount:${DOMAIN//./-}@$PROJECT_ID.iam.gserviceaccount.com --role roles/dns.admin
 </code></pre>
 
 <ol>
@@ -229,8 +227,7 @@ The configuration is made in these three files:</p>
 
 <ul>
 <li>Choose <code>namePrefix</code>, <code>nameSuffix</code> and <code>namespace</code></li>
-<li>If you plan to use Let&rsquo;s Encrypt <code>prod</code> environment instead of <code>staging</code>, change var <code>CLUSTER_ISSUER_NAME</code> accordingly. <strong>Note:</strong> If you switch from <code>staging</code> to <code>prod</code>, delete already present staging certificates so that the cert-manager issues new certificates.
-<br /></li>
+<li>If you plan to use Let&rsquo;s Encrypt <code>prod</code> environment instead of <code>staging</code>, change var <code>CLUSTER_ISSUER_NAME</code> accordingly. <strong>Note:</strong> If you switch from <code>staging</code> to <code>prod</code>, delete already present staging certificates so that the cert-manager issues new certificates.</li>
 </ul></li>
 </ul>
 
@@ -265,20 +262,28 @@ The configuration is made in these three files:</p>
 <li><code>https://argo.$(DOMAIN)</code></li>
 </ul>
 
-<hr />
-
-<h3 class="section-head" id="8"><a href="#8">CI/CD with Argo</a></h3>
-
-<p>For running basic workflows refer to the <a href="https://github.com/argoproj/argo/blob/master/demo.md">demos</a> page.</p>
-
-<p>For using it for CI refer to <a href="https://github.com/kube-platform/base-extras/tree/master/argo/examples/ci/CI.md">this example</a>.</p>
-
 
     
     </div>
     </div>
 </main>
-  <footer></footer>
+  <footer>   <footer id="footer">
+    <nav>
+      <ul>
+        <li><span>KubePlatform</span></li>
+        <li>
+          <a href="/blog/">Blog</a>
+        </li>
+        <li>
+        <a href="/docs/">Docs</a>
+        </li>
+        <li>
+          <a href="/faq/">FAQ</a>
+        </li>
+      </ul>
+    </nav>
+    <p>&copy; Licence MIT.</p>
+  </footer> </footer>
 
 
   <script src="/js/kube.js" type="text/javascript">

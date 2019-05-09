@@ -17,9 +17,7 @@
       
       <guid>/docs/components/</guid>
       <description>Ingress Controller The nginx-ingress controller is used for routing incoming traffic. By using ingresses for exposing services to external traffic, only one load balancer is provisioned per ingress controller. This approach does save not only costs billed by the infrastructure provider but also provides more fine-grained control over routing. For more details on the nginx-ingress controller configuration, see the documentation. 
-Logging EFK Stack
-
-Monitoring, Alerting Prometheus mit node-exporter, Grafana, Alert Manager, kube-state-metrics etc.</description>
+Logging For collecting and analysing logs the EFK Stack is used, consisting of Elasticsearch, Fluentd, and Kibana.</description>
     </item>
     
     <item>
