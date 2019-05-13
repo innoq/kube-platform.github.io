@@ -16,6 +16,10 @@
   </url>
   
   <url>
+    <loc>/docs/architecture/</loc>
+  </url>
+  
+  <url>
     <loc>/blog/</loc>
     <lastmod>2017-03-02T21:56:55+01:00</lastmod>
     <priority>0</priority>
