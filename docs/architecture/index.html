@@ -123,7 +123,7 @@ headingSelector: 'h3'
 
 
     <p><h3 class="section-head" id="dns-tls"><a href="#dns-tls">DNS &amp; TLS</a></h3>
-Ingresses configure both the <mark>cert-manager</mark> and <mark>external-dns</mark>. <strong>external-dns</strong> is configured implicitly through the hostname mapping, where the <strong>cert-manager</strong> requires annotations or already present certificates to watch out for.</p>
+Ingresses configure both the <mark>cert-manager</mark> and <mark>external-dns</mark>. <strong>external-dns</strong> is configured implicitly through the hostname mapping, whereas the <strong>cert-manager</strong> requires annotations or already present certificates to watch out for.</p>
 
 <div class="example">
     <img alt="dns-tls" src="/img/architecture/dns_tls.png" />
@@ -137,7 +137,7 @@ This figure shows the role of ingresses as they are configured to redirect every
 </div>
 
 <p><h3 class="section-head" id="logging-monitoring"><a href="#logging-monitoring">Logging &amp; Monitoring</a></h3>
-Both <mark>elasticsearch</mark> and <mark>prometheus</mark> are deployed with Kubernetes daemons to gather data. Daemons are present on every worker node. Using the EFK Stack <strong>fluentd</strong> is utilized to collect logs from workloads of a node, and to push them to <strong>elasticsearch</strong>. In the case of <strong>prometheus</strong> all metrics are scraped from the emitting sources, collecting daemons or services. The <strong>node-exporter</strong> is a daemon to collect node-specific data. The <strong>kube-state-metric</strong> service collects metrics of the overall Kubernetes cluster through its API.</p>
+Both <mark>Elasticsearch</mark> and <mark>Prometheus</mark> are deployed together with Kubernetes daemons to gather data. Daemons are present on every worker node. Using the EFK Stack <strong>Fluentd</strong> is utilized to collect logs from workloads of a node, and to push them to <strong>Elasticsearch</strong>. In the case of <strong>Prometheus</strong> all metrics are scraped from the emitting sources, collecting daemons or services. The <strong>node-exporter</strong> is a daemon to collect node-specific data. The <strong>Kube-State-Metric</strong> service collects metrics of the overall Kubernetes cluster through its API.</p>
 
 <div class="example">
     <img alt="logging-monitoring" src="/img/architecture/logging_monitoring.png" />

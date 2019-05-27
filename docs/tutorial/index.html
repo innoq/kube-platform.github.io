@@ -95,7 +95,7 @@
     <div id="hero">
       <h1> Getting started </h1>
       <p class="hero-lead">
-           Learn how to utilize Kubeplatform for your production-ready cluster on <mark>GKE</mark>.
+           Learn how to utilize KubePlatform for your production-ready cluster on <mark>GKE</mark>.
       </p>
 
     </div>
@@ -136,12 +136,12 @@ headingSelector: 'h3'
 <ul>
 <li>An email address for issuing tls certificates</li>
 <li>A DNS zone name (a domain or subdomain like <code>kubeplatform.my.domain.io</code>)</li>
-<li>A GCP project ID (e.g. <code>my-google-project-223304</code>)</li>
+<li>A GCP project ID (e.g., <code>my-google-project-223304</code>)</li>
 </ul>
 
-<h4 class="section-head" id="3"><a href="#3">Own Oauth provider</a></h4>
+<h4 class="section-head" id="3"><a href="#3">Own OAuth provider</a></h4>
 
-<p>KubePlatform comes with pre-configured Keycloak used for user management and oauth2 authentication. If you plan to use your own OAuth provider, collect these parameters:</p>
+<p>KubePlatform comes with pre-configured Keycloak used for user management and oauth2 authentication. If you plan to use an own OAuth provider, collect these parameters:</p>
 
 <ul>
 <li>An Issuer URL for OpenID Connect</li>
@@ -239,8 +239,8 @@ The configuration is made in these three files:</p>
 
 <ol>
 <li>Create a Kubernetes cluster and retrieve kubectl <a href="https://cloud.google.com/sdk/gcloud/reference/container/clusters/get-credentials">credentials</a></li>
-<li><code>kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=my@google.account.com</code></li>
-<li>Create the namespace you have chosen above</li>
+<li>Create a clusterrolebinding for your account: <code>kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=my@google.account.com</code></li>
+<li>Create the namespace you have chosen in the overlay configuration step.</li>
 <li>Execute <code>kustomize build google-overlay | kubectl apply -f -</code></li>
 </ol>
 

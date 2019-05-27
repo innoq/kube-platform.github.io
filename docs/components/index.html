@@ -137,8 +137,8 @@ headingSelector: 'h3'
     <img alt="fluentd" src="/img/components/fluentd.svg" width="50"/>
     <img alt="kibana" src="/img/components/kibana.svg" width="50"/>
   </div>
-  For collecting and analysing logs the <mark>EFK Stack</mark> is used, consisting of <strong>Elasticsearch</strong>, <strong>Fluentd</strong>, and <strong>Kibana</strong>.
-  <strong>Elasticsearch</strong> stores logs emitted by pods. With <strong>Fluentd</strong> logs are collected and transformed into the JSON format for <strong>Elasticsearch</strong> to consume. It is deployed as a DeamonSet and has permission to collect logs from every pod on every node. Those logs are then submitted to <strong>Elasticsearch</strong> for storage. With <strong>Kibana</strong> data from the logs can be queried from <strong>Elasticsearch</strong> and visualized.
+  For collecting and analyzing logs, the <mark>EFK Stack</mark> is used, consisting of <strong>Elasticsearch</strong>, <strong>Fluentd</strong>, and <strong>Kibana</strong>.
+  <strong>Elasticsearch</strong> stores logs emitted by pods. With <strong>Fluentd</strong> logs are collected and transformed into the JSON format for <strong>Elasticsearch</strong> to consume. It is deployed as a DeamonSet and has permission to collect logs from every pod on every node. Those logs are then submitted to <strong>Elasticsearch</strong> for storage. Data from the logs can be queried and visualized with <strong>Kibana</strong>.
 </div></p>
 
 <p><h3 class="section-head" id="monitoring"><a href="#monitoring">Monitoring, Alerting</a></h3>
@@ -147,12 +147,12 @@ headingSelector: 'h3'
     <img alt="prometheus" src="/img/components/prometheus.svg" width="75"/>
     <img alt="grafana" src="/img/components/grafana.svg" width="75"/>
   </div>
-  <mark>Prometheus</mark> is used to collect and store metrics for monitoring. The <mark>Kube-State-Metrics</mark> add-on generates metrics from the Kubernetes API to monitor deployed workloads. Metrics about Kubernetes nodes are collected via the <mark>node-exporter</mark>. Additionally, the <strong>Prometheus</strong> <mark>Alert Manager</mark> triggers notifications for services such as Pagerduty and Slack by using webhooks. <mark>Grafana</mark> serves as time series analytics tool for <strong>Prometheus</strong> provided metrics. Additionally, <strong>Grafana</strong> provides an UI to define alert rules and to create dashboards.
+  <mark>Prometheus</mark> is used to collect and store metrics for monitoring. The <mark>Kube-State-Metrics</mark> add-on generates metrics from the Kubernetes API to monitor deployed workloads. Metrics about Kubernetes nodes are collected via the <mark>node-exporter</mark>. Additionally, the <strong>Prometheus</strong> <mark>Alert Manager</mark> triggers notifications for services such as Pagerduty and Slack by using webhooks. <mark>Grafana</mark> serves as time series analytics tool for <strong>Prometheus</strong> provided metrics. Additionally, <strong>Grafana</strong> provides a UI to define alert rules and to create dashboards.
 </div></p>
 
 <p><h3 class="section-head" id="tls"><a href="#tls">TLS Certificate Management</a></h3>
 <div class="example">
-  The <mark>cert-manager</mark> is installed for automatically issuing tls certificates via <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>. Annotations to the service&rsquo;s ingress, indicates the need for a tls certificate to be fetched by the <strong>cert-manager</strong>. For more information about the <strong>cert-manager</strong>, reference to the <a href="http://docs.cert-manager.io">documentation</a>.</p>
+  The <mark>cert-manager</mark> is installed for automatically issuing tls certificates via <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>. Annotations to the service&rsquo;s ingress indicate the need for a tls certificate to be fetched by the <strong>cert-manager</strong>. For more information about the <strong>cert-manager</strong>, reference to the <a href="http://docs.cert-manager.io">documentation</a>.</p>
 
 <p><pre>
     <span class="hljs-comment"># ingress.yaml</span>
@@ -167,7 +167,7 @@ headingSelector: 'h3'
   <div style="margin:0px 15px 0px 0px; float:left">
     <img alt="external-dns" src="/img/components/external-dns.png" width="150"/>
   </div>
-  The DNS server configuration tool <mark>External DNS</mark> communicates with the infrastructure provider to configure DNS entries. Applying domain mappings through a Kubernetes ingress leads to an actual configuration via the IaaS providers API where your Kubernetes cluster is running on. This approach does only apply if the domains nameservers are managed by the same provider. The credentials for communicating with the IaaS providers API need to be provided upon installation with KubePlatform. Usually, those credentials can be generated via CLI or the IaaS providers user interface. <strong>External DNS</strong> is a self-service tool so that it acts autonomously when valid credentials where provided. For more details, see the <a href="https://github.com/kubernetes-incubator/external-dns">documentation of External DNS</a>.
+  The DNS server configuration tool <mark>External DNS</mark> communicates with the infrastructure provider to configure DNS entries. Applying domain mappings through a Kubernetes ingress leads to an actual configuration via the IaaS providers API where your Kubernetes cluster is running on. This approach does only apply if the same provider your cluster is running on manages the domain&rsquo;s nameservers. The credentials for communicating with the IaaS providers API need to be provided upon installation with KubePlatform. Usually, those credentials can be generated via CLI or the IaaS providers user interface. <strong>External DNS</strong> is a self-service tool so that it acts autonomously when valid credentials where provided. For more details, see the <a href="https://github.com/kubernetes-incubator/external-dns">documentation of External DNS</a>.
 </div></p>
 
 <p><h3 class="section-head" id="iam"><a href="#iam">Identity Management</a></h3>
@@ -191,7 +191,7 @@ headingSelector: 'h3'
   <mark>argo</mark> is a collection of Kubernetes-native automation tools for building workflow pipelines. KubePlatform installs the <mark>argo workflow</mark> engine, along with <mark>argo events</mark>. These components enable to create build pipelines or to automate any other workflow.</p>
 
 <p>Consult <a href="https://github.com/argoproj/argo">argos&rsquo; project repository</a>, to learn more about their workflow automation tools.
-  For running basic workflows refer to the <a href="https://github.com/argoproj/argo/blob/master/demo.md">demos</a> page. For using it for CI refer to <a href="https://github.com/kube-platform/base-extras/tree/master/argo/examples/ci/CI.md">this example</a>.
+  For running basic workflows refer to the <a href="https://github.com/argoproj/argo/blob/master/demo.md">demos</a> page. For using it for CI, refer to <a href="https://github.com/kube-platform/base-extras/tree/master/argo/examples/ci/CI.md">this example</a>.
 </div></p>
 
 
